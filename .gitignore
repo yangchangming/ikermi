@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 assc
 .sass-cache
 capybara-*.html
 .rspec
 .rvmrc
 .project
+=======
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+>>>>>>> 47b6d28c06fd9a4146b70c2bc794b67e71288823
 /.bundle
 /vendor/bundle
 /log/*
@@ -14,4 +22,8 @@ capybara-*.html
 /spec/tmp/*
 **.orig
 rerun.txt
+<<<<<<< HEAD
 pickle-email-*.html
+=======
+pickle-email-*.html
+>>>>>>> 47b6d28c06fd9a4146b70c2bc794b67e71288823
