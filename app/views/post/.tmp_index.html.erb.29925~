@@ -1,0 +1,107 @@
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".item").mouseover(function(){
+			$(".hoverClass").removeClass("hoverClass");
+			$(this).addClass("hoverClass");
+		}).mouseout(function(){
+			$(this).removeClass("hoverClass");
+		});	
+	});
+	
+	//发布文章
+	function doPost(){
+		$(".contentArea").css("height","auto");
+		var htmlObj = $.ajax({
+			url:"/post/new",
+			success:function(data){
+				
+				//alert(data);
+				
+				$(".contentArea").html(data);
+			},
+			cache:false
+		});
+		
+		alert(htmlObj.responseText);
+		
+	}
+	
+</script>
+
+<style>
+	
+	li.item a
+	{
+		text-decoration:none;
+	}
+	
+	li.item a:visited
+	{
+		color:#65727b;
+	}
+	
+</style>
+
+
+<div class="contentHeader">
+	<span class="toolBar" >
+		<div>
+			<button type="button" onclick="javascript:doPost();">发布</button>
+		</div>
+	</span>
+	<h1 >文章设置</h1>
+</div>
+
+<div class="contentArea">
+	<ul>
+		<li id="title">
+			<span class="title">标题</span>
+			<span class="author">作者</span>
+			<span class="publishTime">发布时间</span>
+			<span class="status">状态</span>
+		</li>
+		
+		<% @posts.each do |post| %>
+		
+		<li class="item">
+			<a href="/" >
+				<span class="title"><%= post.title %></span>
+				<span class="author"><%= post.author %></span>
+				<span class="publishTime"><%= post.created_at %></span>
+				<span class="status"><%= post.enabled %></span>
+			</a>
+		</li>
+		
+		<% end %>
+		
+		<li class="item">
+			<a href="/">
+				<span class="title">中共决定秋后算账，详细报道请看http://www.facebook.com</span>
+				<span class="author">admin</span>
+				<span class="publishTime">2011/12/12</span>
+				<span class="status">发布</span>
+			</a>
+		</li>
+		
+		<li class="item">
+			<a href="/">
+				<span class="title">中共决定秋后算账，详细报道请看http://www.facebook.com</span>
+				<span class="author">admin</span>
+				<span class="publishTime">2011/12/12</span>
+				<span class="status">发布</span>
+			</a>
+		</li>
+		
+		
+	</ul>
+</div>
+
+<div class="contentBottom">
+</div>
+
+
+
+
+
+

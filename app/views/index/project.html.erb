@@ -1,0 +1,83 @@
+<% content_for("layout_css") do %>
+#ctl00_sitemapan3 .item a
+{
+	background: url("/images/sitemapa-item3-selected.gif") no-repeat;
+}
+<% end %>
+
+<% content_for("layout_js") do %>
+	$(function(){
+	
+		$(".project-demo img").each(function(){
+		
+			var demo_name = $(this).attr('class');
+			
+			Tipped.create('.'+ demo_name, '/'+ demo_name +'.html',{
+				skin:'facebook',
+				border:{size:1,color:"#999999"},
+				ajax:true,
+				fixed:true,target: 'mouse',
+				hook: {
+				  target: 'leftmiddle',
+				  tooltip: 'rightmiddle'
+				},
+				background: { color: '#fff' },
+				shadow:{blur:3,color:'#999999',opacity: .5}
+			});
+			
+		
+		});
+		
+	});
+	
+<% end %>
+
+
+<table cellspacing="0" cellpadding="0" border="0" id="ctl00_Main_ContentZone2" class="webpartzone" style="width:100%;">
+    <tr>
+        <td style="height:100%;">
+            <table cellspacing="0" cellpadding="0" border="0" style="width:100%;height:100%;">
+                <tr>
+                    <td>
+                    <table id='WebPart_wp808377929' class='webpartchrome' cellpadding='0' cellspacing='0'>
+                        <tr>
+                            <td>
+                            	
+								<div class='webpart-border'>
+                                    <div class='webpart-border-2'>  <!-- 多个div的作用是加载多个圆角直线作为背景图片,这个div的背景图片是一个白色的图片  -->
+                                        <div class='webpart-border-3'>
+                                            <div class='webpart-border-4'>
+                                               
+											    <div class='webpart-body' >
+													<div id="main">
+													
+													<div class="project-demo" style="border:0px solid;">	
+														<img class="drp_demo" border="1px solid" alt="drp_demo" src="/images/drp_demo.jpg" width="350" height="200" />
+														<img class="crm_demo" border="1px solid" alt="drp_demo" src="/images/drp_demo.jpg" width="350" height="200" />
+													</div>
+													<div class="project-demo" style="border:0px solid;">	
+														<img class="holly_demo" border="1px solid" alt="drp_demo" src="/images/drp_demo.jpg" width="350" height="200" />
+														<img class="gap_demo" border="1px solid" alt="drp_demo" src="/images/drp_demo.jpg" width="350" height="200" />
+													</div>
+													
+													</div>	
+                                                </div>
+												
+                                            </div> 
+										</div> 
+									</div> 
+								</div>
+								
+                            </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0;height:100%;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>

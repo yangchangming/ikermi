@@ -1,0 +1,21 @@
+<script  src="/editor/kindeditor-min.js"></script>
+<script  src="/editor/lang/zh_CN.js"></script>
+	
+<script type="text/javascript">
+	
+		var editor;
+	    KindEditor.ready(function(K) {
+	            editor = K.create('textarea[name="content"]');
+	    });
+		
+		
+</script>	
+	
+<div>
+	<textarea id="editor_id" name="content" style="width:500px;height:300px;">
+		
+	</textarea>
+
+</div>
+
+

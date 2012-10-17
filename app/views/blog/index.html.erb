@@ -1,0 +1,52 @@
+ <% @posts.each do |post| %>
+
+  <header class="entry-header">
+    <h1 class="entry-title">
+      <a href="blog/show/<%= post.id%>#more" title="<%= post.title %>" rel="bookmark">
+        <%= post.title %> 
+      </a>
+    </h1>
+   
+    <div class="entry-meta">
+      <span class="sep">Posted on </span>
+      <a href="#" title="4:32 am" rel="bookmark">
+        <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>
+      </a>
+      <span class="sep"> | </span>
+      
+      <span class="by-author">
+        <span class="sep"> by </span>
+        <span class="author vcard">
+          <a class="url fn n" href="#" title="View all posts by admin" rel="author">
+				<%= post.author  %>          
+          </a>
+        </span>
+      </span>
+    </div>
+   
+  </header>
+
+
+  <div class="entry-content">
+    <p> 
+     <%= truncate_html(300,"....",post.content) %>
+    </p>
+  </div>
+
+
+  <footer class="entry-meta">
+    <span class="cat-links">
+      <span class="entry-utility-prep entry-utility-prep-cat-links">Tag</span>
+      <a href="#" title="View all posts in Uncategorized" rel="category">      
+ 	     <%= post.category %> 
+      </a>
+    </span>
+    <span class="sep"> | </span>
+    <span class="comments-link">
+      <a href="#" title="Comment on Hello world!"><b>0</b> Comments</a>
+    </span>
+  </footer><!-- #entry-meta -->
+ 
+ 
+	<% end %>  
+  

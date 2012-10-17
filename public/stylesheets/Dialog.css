@@ -1,0 +1,89 @@
+
+/* DIALOG */
+
+.dialog
+{
+	background: url("/images/dialog.gif");
+	margin: 50px auto;
+	width: 500px !important;
+}
+
+.dialog,
+.dialog a
+{
+	color: #575757;
+}
+
+.dialog-header
+{
+	background: url("/images/dialog-header.jpg") no-repeat;
+	font-family: microsoft yahei;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: normal;
+	letter-spacing: 1.4em;
+	height: 20px;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.dialog-header,
+.dialog-header a
+{
+	color: #575757;
+}
+
+.dialog-body
+{
+	padding: 30px 20px;
+	background: url("/images/dialog-body.gif") bottom no-repeat;
+}
+
+.dialog-body p
+{
+	margin: 10px 0 20px 10px;
+}
+
+.dialog-message
+{
+	text-align: center;
+	margin: 20px auto 0px;
+}
+
+.dialog-error
+{
+	text-align: center;
+	margin: 20px auto 0px;
+	color: red;
+}
+
+.dialog-buttons
+{
+	margin: 40px 60px 0px auto;
+	text-align: right;
+}
+
+.dialog-buttons-side
+{
+	float: left;
+	margin-left: 120px;
+}
+
+.dialog .fieldlabel
+{
+	width: 100px;
+	float: left;
+	clear: left;
+	text-align: right;
+	font-size: 12px;
+}
+
+.dialog .fieldvalue
+{
+	margin: 0 0 10px 120px;
+}
+
+.dialog .fieldvalue .textbox
+{
+	width: 280px;
+}

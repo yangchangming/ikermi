@@ -1,0 +1,185 @@
+
+#menuDiv
+{
+	background:#fff;
+	width:982px;
+	padding:0px;
+	margin:0px;
+	text-align:left;
+	
+	border:0px solid #3322ff;
+}
+
+#MyFacebookStyleSidebar
+{
+	width:189px;
+	background:#fff;
+	text-align:left;
+	margin-left:0px;
+	padding-left:0px;
+	margin-top:20px;
+	float:left;
+}
+#MyFacebookStyleSidebar a
+{
+	border:0px solid #b5edbc;
+	text-decoration:none;
+	color:#000;
+}
+#MyFacebookStyleSidebar li 
+{
+	padding-top:3px;
+	padding-bottom:3px;
+	list-style:none;
+	list-style-type:none;
+	text-indent:10px;
+}
+#MyFacebookStyleSidebar li span
+{
+	width:100%;
+	cursor:pointer;
+}
+
+#MyFacebookStyleSidebar li img
+{
+	margin-right:4px;
+	margin-top:2px;
+}
+
+
+
+
+#mainContent
+{
+	border:1px solid #aaa;
+	border-top:0px;
+	width:791px;
+	/*width:600px;*/
+	float:right;
+	height:100%;
+	
+	
+} 
+
+
+.current
+{
+	background:#D8DFEE;
+	font-weight:bold;
+}
+.hoverClass
+{
+	background:#EDEFF5;
+}
+img
+{
+	border:0px;
+}
+.loadingIco
+{
+	float:right;
+	*margin-top:-18px;
+}
+.spiter
+{
+	border-top:1px solid #ccc;
+	height:1px;
+	line-height:1px;
+	padding:0px;
+	margin:0px;
+	overflow:hidden;
+}
+
+iframe
+{
+	height:500px;
+}
+
+
+#mainContent .contentHeader
+{
+	margin-top:20px;
+	margin-left:20px;
+	margin-right:20px;
+	border-bottom:1px solid #aaa;
+}
+
+#mainContent .contentHeader span.toolBar
+{
+	margin-top:0px;
+	width:100px;
+	border:0px solid;
+	text-align:right;
+	float:right;
+}
+
+
+#mainContent .contentHeader button{
+	border-color:#062C50;
+	background:#336fa5 url(/images/button_submit.gif) bottom left repeat-x;
+	color:#e7e8d8;
+	min-width:40px;
+	cursor:pointer;
+	border:1px solid #062C50;
+	border-bottom:1px solid #003;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	text-shadow:0 -1px #19558D;
+	font-size:1em;
+	display:inline-block;
+	padding:3px 6px;
+	text-align:center;
+	
+}
+
+#mainContent .contentArea
+{
+	margin-left:20px;
+	margin-top:10px;
+	float:left;
+}
+
+#mainContent .contentArea li
+{
+	list-style: none;
+	list-style-type:none;
+	text-indent: 10px;
+	height:35px;
+	width:750px;
+	border-bottom:1px solid #e9e9e9;
+}
+
+.contentArea li#title span
+{
+	font-weight:bold;
+}
+	
+.contentArea span
+{
+	display:inline-block;
+	margin-top:10px;
+	overflow:hidden;
+	border:0px solid;
+	
+}
+
+.contentArea span.title
+{
+	width:370px;
+}
+.contentArea span.author
+{
+	width:100px;
+}
+.contentArea span.publishTime
+{
+	width:150px;
+}
+.contentArea span.status
+{
+	width:100px;
+}
+
+
+
+

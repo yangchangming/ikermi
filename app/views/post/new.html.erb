@@ -1,0 +1,118 @@
+<script type="text/javascript" src="/javascripts/zh_CN.js"></script>
+<script type="text/javascript" src="/javascripts/kindeditor-min.js" ></script>
+<script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(K) {
+       // editor = K.create('textarea[name="post[content]"]', {
+
+        editor = K.create('#editor_id', {
+          resizeType : 1,
+          allowPreviewEmoticons : false,
+          allowImageUpload : false,
+          items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+            'insertunorderedlist', '|', 'emoticons', 'image', 'link','fullscreen','code'],
+          //手动同步新建的文本框内容到原来的textarea中,可以省略掉
+          afterBlur: function(){
+              //this.sync();
+          }
+          
+        });
+      });
+
+
+
+    function doPreSubmit(){
+   //   document.getElementById("editor_id").value = editor.html();
+   
+//       editor.sync();
+
+ //   alert(document.getElementById("editor_id").value);
+    }
+
+</script>
+
+
+
+<script type="text/javascript">
+	function goBack(){
+		//window.history.go(-1);
+		window.location.href="/admin/panel";
+	}
+</script>	
+
+<div class="leftbox"> 
+<div class="left_wrapper"> 
+	<div class="box" > 
+    <h1>POSTS</h1> 
+</div>
+ 	
+	<% form_for (:post,@post,:url=>{:controller=>'post',:action=>'create'}) do |f| %>
+	
+	<table width="100%">
+		<tr width="100%">
+			<td class="name">标题:</td>
+			<td class="value">
+				<%= f.text_field :title %>
+			</td>
+		</tr>
+		<tr width="100%">
+			<td class="name">作者:</td>
+			<td class="value">
+				<%= f.text_field :author,:value=>"#{session[:user].username}" %>
+			</td>
+		</tr>
+		<tr width="100%">
+			<td class="name">摘要:</td>
+			<td class="value">
+				<%= f.text_field :abstract %>
+			</td>
+		</tr>
+		<tr width="100%">
+			<td class="name">类别:</td>
+			<td class="value">
+				<%= f.text_field :category %>
+			</td>
+		</tr>
+		<tr width="100%">
+			<td class="name">是否有效:</td>
+			<td class="value">
+				<%= f.text_field :enabled %>
+			</td>
+		</tr>
+		<tr width="100%">
+			<td class="name" style="border:0px solid; vertical-align:top;">内容:</td>
+			<td class="value" style="border:0px solid #3322ff; vertical-align:top;">
+
+<%= f.text_area :content,:id=>"editor_id",:style=>"width:500px;height:300px;"   %>
+                
+			</td>
+		</tr>
+	 
+	</table>
+	
+	<div class="actions">
+    	<button type="submit" class="button submit">保存</button>
+	</div> 
+	
+	<% end %>
+</div> 
+ 
+
+	 
+ <!--侧边栏 开始 -->
+<div class="sidebar" > 
+<div class="box"> 
+	 <h2>POST OPERATION</h2> 
+    <div class="inner" style="line-height:180%;padding:0px;background:#fff5c9;"> 
+  <a href="/post/new">Publish Post</a><br /> 
+    </div>
+  <a href="/post/index">Index Posts</a><br /> 
+</div> 
+</div> 
+<!-- 侧边栏结束 -->
+
+
+
+

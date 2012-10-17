@@ -1,0 +1,63 @@
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".item").mouseover(function(){
+			$(".hoverClass").removeClass("hoverClass");
+			$(this).addClass("hoverClass");
+		}).mouseout(function(){
+			$(this).removeClass("hoverClass");
+		});	
+	});
+	
+	//发布文章
+	function doPost(){
+
+	}
+</script>
+
+<div class="leftbox"> 
+<div class="left_wrapper"> 
+	<div class="box" > 
+    <h1>POSTS</h1> 
+</div>
+ 
+<div class="contentArea">
+	<table width="100%">
+		<tr height="30px">
+			<td width="40%">标题</td>
+			<td width="10%" >作者</td>
+			<td width="30%" >发布时间</td>
+            <td width="10">类别</td>
+			<td width="10%" >状态</td>
+		</tr>
+		
+		<% @posts.each do |post| %>
+		
+		<tr  height="30px" class="item">
+				<td class="title"><%= post.title %></td>
+				<td class="author"><%= post.author %></td>
+				<td class="publishTime"><%= post.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+			    <td><%= post.category %></td>
+            	<td class="status"><%= post.enabled %></td>
+		</tr>
+		
+		<% end %>
+		
+	</table>
+</div>
+
+
+</div> 
+ 
+
+	 
+ <!--侧边栏 开始 -->
+<div class="sidebar" > 
+<div class="box"> 
+	 <h2>POST OPERATION</h2> 
+  <a href="/post/new">Publish Post</a><br /> 
+    <div class="inner" style="line-height:180%;padding:0px;background:#fff5c9;"> 
+  <a href="/post/index">Index Posts</a><br /> 
+    </div>
+</div> 
+</div> 
+	  <!-- 侧边栏结束 -->

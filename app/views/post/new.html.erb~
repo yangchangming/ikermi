@@ -1,0 +1,76 @@
+<script type="text/javascript" src="/kindeditor-min.js"></script>
+<script type="text/javascript" src="/zh_CN.js"></script>
+
+<script type="text/javascript">
+var editor;
+	    KindEditor.ready(function(K) {
+	            editor = K.create('textarea[name="content"]',{
+					resizeType: 1,
+					allowPreviewEmoticons: false,
+					allowImageUpload: false,
+					items: ['fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+		});
+		
+		function goBack(){
+			//window.history.go(-1);
+			window.location.href="/admin/panel";
+		}
+		
+</script>	
+	
+	
+	<% form_for (:post,:url=>{:controller=>'post',:action=>'create'}) do |form| %>
+	
+	<ul id="editArea">
+		<li>
+			<span class="name">标题:</span>
+			<span class="value">
+				<%= form.text_field :title %>
+			</span>
+		</li>
+		<li>
+			<span class="name">作者:</span>
+			<span class="value">
+				<%= form.text_field :author,:value=>"#{session[:user].username}" %>
+			</span>
+		</li>
+		<li>
+			<span class="name">摘要:</span>
+			<span class="value">
+				<%= form.text_field :abstract %>
+			</span>
+		</li>
+		<li>
+			<span class="name">类别:</span>
+			<span class="value">
+				<%= form.text_field :category %>
+			</span>
+		</li>
+		<li>
+			<span class="name">是否有效:</span>
+			<span class="value">
+				<%= form.text_field :enabled %>
+			</span>
+		</li>
+		<li style="height:270px;width:750px;border:0px solid #3322ff;">
+			<span class="name" style="border:0px solid; vertical-align:top;">内容:</span>
+			<span class="value" style="border:0px solid #3322ff;vertical-align:top;">
+				<%= form.text_area :content,:cols=>70,:rows=>10,:class=>"mceEditor" %>
+			</span>
+			
+		</li>
+			
+			<textarea  name="content" cols="30" rows="40" style="width:400px;height:100px;">kindeditor</textarea>
+	
+	</ul>
+	
+		<li style="border-bottom:1px solid #cccccc;height:10px;margin-bottom:9px;">
+		</li>
+	
+	<div class="actions">
+    	<button type="submit" class="button submit">保存</button>
+	</div> 
+	
+	<% end %>
+

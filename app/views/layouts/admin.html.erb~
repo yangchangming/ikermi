@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+  <title>颗米教育科技 </title> 
+  
+  
+  
+  <%= javascript_include_tag "jquery.min.js","jquery.MyFacebookStyleSidebar.js" %>
+  <%= stylesheet_link_tag "login","MyFacebookStyleSidebar" %>	
+  
+  <style>
+		<%= yield:panel_css %>
+  </style>
+  
+  <link rel="shortcut icon" href="/images/logoHead.png" /> 
+  
+  <% javascript_tag do %>
+  	<% if flash[:notice] %>
+	  	$(document).ready(function(){
+				fadein();
+				fadeout();
+			
+		});
+	<% end %>	
+  
+  	function fadein(){
+		$('.message').fadeIn(800);
+	}
+  
+  	function fadeout(){
+		$('.message').fadeOut(2500);
+	}
+  
+  <% end %>
+  
+	<script type="text/javascript">
+  		<%= yield:panel_js %>
+	</script>	
+	
+  
+</head> 
+
+<body> 
+
+<!-- 页头部分 -->
+  <div id="header"> 
+    <div class="container"> 
+	
+      <div class="left_wrapper"> 
+        <div id="site_name"> 
+          <a href="/" class="logo">颗米</a> 
+        </div> 
+      </div> 
+	  
+      <div class="sidebar"> 
+        <div id="user_bar"> 
+			<% if !session[:user] %>
+				<a href="/byself">随便看看</a> 
+				<a href="/admin">登陆</a>
+	            <a href="/admin/register">注册</a> 
+			<% end %>
+			<% if session[:user] %>
+	            <a href="/">首页</a> 
+				<a href="/admin/setup"><%= session[:user].username %></a>
+				<a href="/admin/setup">设置 </a>
+				<a href="/admin/logout">注销</a>
+			<% end %>
+        </div> 
+      </div> 
+	  
+    </div> 
+  </div> 
+  
+  <!-- 消息通知 starting -->
+  <% if flash[:notice] %>
+		<div class="message">
+			<%= flash[:notice]%>
+		</div>
+  <% end %>
+  <!-- 消息通知 end -->
+  
+  <!-- 页面主体内容区域 开始 -->
+  <div id="main"> 
+    <div class="container"> 
+
+	  <%= yield %>
+	  
+    </div> 
+  </div> 
+  <!-- 页面主体内容区域 结束 -->
+  
+  
+  
+  
+  <!-- 页脚部分  -->
+  <div id="footer"> 
+    <div class="container"> 
+      <div class="inner"> 
+        <div class="links"> 
+          <a href="/about">关于颗米</a> • 
+          <a href="http://blog.csdn.net/neocode" target="_blank">博客</a> •
+          <a href="/admin/register">如何注册</a> •
+          <a href="mailto:training.gy@gmail.com">反馈</a> 
+        </div> 
+        <div class="copyright"> 
+          	颗米&nbsp;&copy;&nbsp;2011 - WEB软件工程师培训，贵阳JAVA培训
+        </div> 
+      </div> 
+	  
+    </div> 
+  </div> 
+  <!-- 页脚部分 结束  -->
+  
+  <!--
+  <div style="display:none;" id="hidden_new_ask"> 
+    <h2>创建新问题</h2> 
+    <form action="/asks" method="post" id="inner_new_ask"> 
+      <input name="authenticity_token" type="hidden" value="TiBD3RjZ8afCclFLaszbNaMw0q6LTh0aqWbUdSdy8tE=" /> 
+      <textarea type="text" name="ask[title]" class="title" placeholder="在这里输入问题"></textarea> 
+      <label>可选:</label>添加更多描述
+      <textarea type="text" name="ask[body]"></textarea> 
+      <button type="submit" class="submit">添加问题</button> <a href="#" onclick="$.facebox.close(); return false;">取消</a> 
+    </form> 
+  </div> 
+  
+  <div style="display: none;" id="loading"> 
+    <div class="logo"></div> 
+    <div class="text">加载中…</div> 
+  </div>
+ -->
+  
+</body> 
+</html>

@@ -1,0 +1,74 @@
+
+.audit
+{
+	margin-top: 8px;
+	font-size: 9px;
+	line-height: normal;
+}
+
+.commentlist-icon
+{
+	background: url("/images/commentlist.jpg")/*tpa=http://www.laoluo.com.cn/App_Themes/Laoluo/Images/commentlist.jpg*/ ;
+	width: 288px;
+	height: 361px;
+	margin: 70px auto 40px;
+	padding-top: 160px;
+	padding-left: 190px;
+}
+
+.commentlist-icon a
+{
+	display: block;
+	width: 90px;
+	height: 45px;
+	margin-bottom: 118px;
+}
+
+.commentlist-icon2 a
+{
+	display: block;
+	width: 90px;
+	height: 45px;
+}
+
+
+/* POLL */
+
+.poll
+{
+	margin: 8px 18px;
+}
+
+.poll-question
+{
+	font-size: 14px;
+	line-height: normal;
+	margin: 0 2px 15px;
+}
+
+.poll-options
+{
+	width: 100%;
+	line-height: 200%;
+}
+
+.poll-plot
+{
+	margin: 3px 0 3px 8px;
+}
+
+.poll-bar
+{
+	border: 1px solid #ccc;
+	background: #ddd;
+	text-align: center;
+	padding: 1px;
+	color: #999;
+	font-size: 9px;
+	line-height: normal;
+}
+
+.poll-buttons
+{
+	margin: 15px 2px;
+}
