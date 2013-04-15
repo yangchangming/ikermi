@@ -27,6 +27,18 @@
     }
   </style>
 
+	<script type="text/javascript">
+  		var _gaq = _gaq || [];
+  	_gaq.push(['_setAccount', 'UA-36330309-1']);
+  	_gaq.push(['_trackPageview']);
+  	(function() {
+   	 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ 	 })();
+
+	</script>
+
 </head>
 
 <body class="home blog single-author two-column right-sidebar">
@@ -38,12 +50,10 @@
          	 ChangMing.Y
           </span>
         </h1>
-        <h2 id="site-description">Just personal site</h2>
+        <h2 id="site-description">{&nbsp;Just personal site&nbsp;}</h2>
       </hgroup>
 
-     <img src="/images/willow.jpg" width="1000" height="288" ></img>
-          	
-     <!--	<img src="/images/ubuntu-006.jpg" width="1000" height="288" ></img>-->
+     <img src="/images/trolley.jpg" width="1000" height="288" ></img>
      	
    <form method="get" id="searchform" action="#">
         <label for="s" class="assistive-text">Search</label>
@@ -63,6 +73,10 @@
             <li class="page_item page-item-2">
               <%= link_to 'About', {:controller=>'blog',:action=>'about'} %>
             </li>
+    <!--        <li class="page_item page-item-2">
+              <%= link_to 'ScreenCast', {:controller=>'blog',:action=>'screencast'} %>
+            </li>
+    -->
           </ul>
         </div>
       </nav><!-- #access -->
@@ -90,28 +104,34 @@
         <aside id="recent-posts-2" class="widget widget_recent_entries">
           <h3 class="widget-title">Recent Posts</h3>
           <ul>
-            <li><%= link_to 'Hello world!',{:controller=>'blog',:action=>'index'} %></li>
+
+         <% @recent_post.each do |recent_post| %> 
+            <li><%= link_to recent_post.title,{:controller=>'blog',:action=>'show',:id=>recent_post.id } %></li>
+          <% end %>
+
           </ul>
         </aside>
         <aside id="recent-comments-2" class="widget widget_recent_comments">
           <h3 class="widget-title">Recent Comments</h3>
           <ul id="recentcomments">
             <li class="recentcomments">
-              <a href='#' rel='external nofollow' class='url'>Mr WordPress</a> on <a href="#">Hello world!</a>
-            </li>
+              <a href='#' rel='external nofollow' class='url'>No comments</a>     </li>
           </ul>
         </aside>
         <aside id="archives-2" class="widget widget_archive">
           <h3 class="widget-title">Archives</h3>
           <ul>
-            <li><a href='#' title='May 2012'>May 2012</a></li>
+            <li><a href='#' title='May 2012'>Oct 2012</a>  </li>
           </ul>
         </aside>
         <aside id="categories-2" class="widget widget_categories">
           <h3 class="widget-title">Categories</h3>
           <ul>
             <li class="cat-item cat-item-1">
-              <a href="#" title="View all posts filed under Uncategorized">Uncategorized</a>
+              <a href="#" title="View all posts filed under Uncategorized">Blog</a>
+            </li>
+            <li class="cat-item cat-item-1">
+              <a href="#" title="View all posts filed under Uncategorized">IKermi</a>
             </li>
           </ul>
         </aside>
@@ -123,7 +143,7 @@
             </li>
             <li><a href="#" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
             <li><a href="#" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-            <li><a href="#" title="Powered by RedPress, state-of-the-art semantic personal publishing platform.">RedPress.org</a></li>
+            <li><a href="/" title="Powered by RedPress, state-of-the-art semantic personal publishing platform.">IKermi.com</a></li>
           </ul>
         </aside>
       </div><!-- #secondary .widget-area -->
@@ -131,8 +151,8 @@
 
     <footer id="colophon" role="contentinfo">
       <div id="site-generator">
-        Proudly powered by &copy;&nbsp;2012&nbsp;<a href="/" title="Semantic Personal Publishing Platform" rel="generator">IKermi</a>
-        &nbsp;&nbsp;黔ICP备12004119号-1
+        Proudly powered by &copy;&nbsp;2012&nbsp;<a href="/" title="Semantic Personal Publishing Platform" rel="generator">IKermi</a> <br/>
+        &nbsp;&nbsp;黔ICP备12004119号-1 &nbsp;&nbsp;Base on Rails
       </div>
     </footer><!-- #colophon -->
 </div><!-- #page -->
