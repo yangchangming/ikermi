@@ -27,9 +27,7 @@ class AdminController < ApplicationController
            flash[:notice] = "邮箱或者密码不匹配."
            redirect_to :action=> 'index'
         end
-        
       end
-      
       
     end
     

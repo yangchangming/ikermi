@@ -1,38 +1,19 @@
-<script type="text/javascript" src="/javascripts/zh_CN.js"></script>
-<script type="text/javascript" src="/javascripts/kindeditor-min.js" ></script>
+<!-- tinymce3.5.8 setup -->
+<script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript">
-      var editor;
-      KindEditor.ready(function(K) {
-       // editor = K.create('textarea[name="post[content]"]', {
-
-        editor = K.create('#editor_id', {
-          resizeType : 1,
-          allowPreviewEmoticons : false,
-          allowImageUpload : false,
-          items : [
-            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-            'insertunorderedlist', '|', 'emoticons', 'image', 'link','fullscreen','code'],
-          //手动同步新建的文本框内容到原来的textarea中,可以省略掉
-          afterBlur: function(){
-              //this.sync();
-          }
-          
-        });
-      });
-
-
-
-    function doPreSubmit(){
-   //   document.getElementById("editor_id").value = editor.html();
-   
-//       editor.sync();
-
- //   alert(document.getElementById("editor_id").value);
-    }
-
+  tinymce.init({ 
+	mode : "textareas",
+   	theme : "advanced", 
+   	language:"cn",
+	plugins : "syntaxhl,fullscreen", 
+	theme_advanced_buttons1 : "bold,italic,underline,undo,redo,link,unlink,image,forecolor,removeformat,cleanup,code,fullscreen,syntaxhl",
+	theme_advanced_buttons2 : "", 
+	theme_advanced_buttons3 : "", 
+	theme_advanced_resizing : true,
+	remove_linebreaks : false, 
+	extended_valid_elements : "textarea[cols|rows|disabled|name|readonly|class]"
+ });
 </script>
-
 
 
 <script type="text/javascript">
@@ -45,7 +26,7 @@
 <div class="leftbox"> 
 <div class="left_wrapper"> 
 	<div class="box" > 
-    <h1>POSTS</h1> 
+    <h1>发布文章</h1> 
 </div>
  	
 	<% form_for (:post,@post,:url=>{:controller=>'post',:action=>'create'}) do |f| %>
@@ -85,9 +66,9 @@
 			<td class="name" style="border:0px solid; vertical-align:top;">内容:</td>
 			<td class="value" style="border:0px solid #3322ff; vertical-align:top;">
 
-<%= f.text_area :content,:id=>"editor_id",:style=>"width:500px;height:300px;"   %>
-                
-			</td>
+              <%= f.text_area :content   %>
+
+            </td>
 		</tr>
 	 
 	</table>
@@ -104,11 +85,11 @@
  <!--侧边栏 开始 -->
 <div class="sidebar" > 
 <div class="box"> 
-	 <h2>POST OPERATION</h2> 
+	 <h2>文章操作</h2> 
     <div class="inner" style="line-height:180%;padding:0px;background:#fff5c9;"> 
-  <a href="/post/new">Publish Post</a><br /> 
+      <a href="/post/new">发布文章</a> <br/>
     </div>
-  <a href="/post/index">Index Posts</a><br /> 
+      <a href="/post/index">所有文章</a><br/> 
 </div> 
 </div> 
 <!-- 侧边栏结束 -->
