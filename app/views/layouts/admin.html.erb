@@ -3,17 +3,16 @@
 <html> 
 <head> 
   <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
-  <title>颗米软件</title> 
+  <title>Blog | Just here</title> 
  
   <%= javascript_include_tag "jquery.min.js" %>
-  <%= stylesheet_link_tag "login","MyFacebookStyleSidebar" %>	
+  <%= stylesheet_link_tag "login" %>	
  
   <style>
 		<%= yield:panel_css %>
   </style>
   
-  <link rel="shortcut icon" href="/images/logoHead.png" /> 
-  
+   
   <% javascript_tag do %>
   	<% if flash[:notice] %>
 	  	$(document).ready(function(){

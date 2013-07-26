@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-
-  #map.root :controller=>'index',:action=>'index'
+  
   map.root :controller=>'blog',:action=>'index'
   
   #创建rest 路由
