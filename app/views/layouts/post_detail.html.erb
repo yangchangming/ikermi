@@ -96,35 +96,27 @@
             </li>
             <li class="page_item page-item-2">
               <%= link_to 'About', {:controller=>'blog',:action=>'about'} %>
-            </li>
-    <!--        <li class="page_item page-item-2">
-              <%= link_to 'ScreenCast', {:controller=>'blog',:action=>'screencast'} %>
-            </li>
-    -->
+            </li>    
           </ul>
         </div>
       </nav><!-- #access -->
     </header><!-- #branding -->
 
+    <!-- main beging -->
     <div id="main">
+
       <div id="primary">
-        <div id="content" role="main">
+        <div id="post_content" role="main">
           <%= yield %>
         </div><!-- #content -->
       </div><!-- #primary -->
 
+
+
+      <!-- right side  -->
+      <!--
       <div id="secondary" class="widget-area" role="complementary">
-	
-			<!--	 
-        <aside id="search-2" class="widget widget_search">
-          <form method="get" id="searchform" action="#">
-            <label for="s" class="assistive-text">Search</label>
-            <input type="text" class="field" name="s" id="s" placeholder="Search" />
-            <input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
-          </form>
-        </aside>
-        -->
-        
+				        
         <aside id="recent-posts-2" class="widget widget_recent_entries">
           <h3 class="widget-title">Recent Posts</h3>
           <ul>
@@ -170,15 +162,24 @@
             <li><a href="/" title="Powered by RedPress, state-of-the-art semantic personal publishing platform.">IKermi.com</a></li>
           </ul>
         </aside>
-      </div><!-- #secondary .widget-area -->
-    </div><!-- #main -->
+
+      </div>
+  -->
+
+    </div>
+    <!-- main end -->
+
+
+
+
 
     <footer id="colophon" role="contentinfo">
       <div id="site-generator">
         Proudly Powered By&nbsp;<a target="_blank" href="http://weibo.com/changmingy">@昌明点杨</a> <br/>
         &nbsp;&nbsp;黔ICP备12004119号-1 &nbsp;&nbsp;Base on Rails
       </div>
-    </footer><!-- #colophon -->
+    </footer>
+
 </div><!-- #page -->
 
 </body>

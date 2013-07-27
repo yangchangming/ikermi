@@ -87,8 +87,12 @@ body {
   width: 100%;
 }
 #content {
-  margin: 0 34% 0 7.6%;
+  margin: 0 7.6% 0 7.6%;
   width: 58.4%;
+}
+/* post detail page */
+#post_content{
+  margin: 0 7.6% 0 7.6%;
 }
 #secondary {
   float: right;
@@ -501,7 +505,7 @@ a:hover {
 ----------------------------------------------- */
 
 #branding {
-  border-top: 2px solid #bbb;
+  border-top: 0px solid #bbb;
   padding-bottom: 10px;
   position: relative;
   z-index: 9999;

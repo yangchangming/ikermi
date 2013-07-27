@@ -7,9 +7,11 @@ class BlogController < ApplicationController
     @recent_post = Post.find(:all,:order=>"created_at desc")    
   end
 
+
   def show 
     @recent_post = Post.find(:all,:order=>"created_at desc")    
     @post = Post.find(params[:id])
+    render :layout => 'post_detail'
   end
 
   def about
