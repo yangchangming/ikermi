@@ -41,7 +41,7 @@
 		<tr width="100%">
 			<td class="name">作者:</td>
 			<td class="value">
-				<%= f.text_field :author,:value=>"#{session[:user].username}" %>
+				<%= f.text_field :author,:value=>"#{session[:user].username}",:readonly=>true %>
 			</td>
 		</tr>
 		<tr width="100%">
@@ -54,6 +54,12 @@
 			<td class="name">类别:</td>
 			<td class="value">
 				<%= f.text_field :category %>
+			</td>
+		</tr>
+		<tr>
+			<td class="name">标签</td>
+			<td class="value">
+				<%= f.text_field :abstract %>
 			</td>
 		</tr>
 		<tr width="100%">
