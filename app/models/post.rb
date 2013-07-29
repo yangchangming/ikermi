@@ -1,5 +1,5 @@
-class Post < ActiveRecord::Base
-    
+class Post < ActiveRecord::Base  
+	    
     validates_presence_of(:title, :message => "标题不能为空！")
     validates_presence_of(:abstract,:message=>"摘要不能为空！")
     validates_presence_of(:content,:message=>"文章内容不能为空！")
