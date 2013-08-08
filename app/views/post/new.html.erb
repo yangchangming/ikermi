@@ -57,9 +57,11 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="name">标签</td>
+			<td class="name">标签:</td>
 			<td class="value">
-				<%= f.text_field :abstract %>
+				<% fields_for :tags do |tag| %>
+					<%= tag.text_field :tag_name %>
+				<% end %>&nbsp;Just Only One
 			</td>
 		</tr>
 		<tr width="100%">
@@ -79,7 +81,9 @@
 	 
 	</table>
 	
-	<div class="actions">
+	<br/>
+	
+	<div class="actions" align="right" >
     	<button type="submit" class="button submit">保存</button>
 	</div> 
 	

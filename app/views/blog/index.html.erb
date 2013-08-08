@@ -1,5 +1,6 @@
  <% @posts.each do |post| %>
 
+<!--  head beging -->
   <header class="entry-header">
     <h1 class="entry-title">
       <a href="blog/show/<%= post.id%>#more" title="<%= post.title %>" rel="bookmark">
@@ -8,10 +9,8 @@
     </h1>
    
     <div class="entry-meta">
-      <span class="sep">Posted on </span>
-      <a href="#" title="4:32 am" rel="bookmark">
-        <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>
-      </a>
+      <span class="sep">Posted on </span>     
+        <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>      
       <span class="sep"> | </span>
       
       <span class="by-author">
@@ -25,7 +24,7 @@
     </div>
    
   </header>
-
+<!--  head end -->
 
   <div class="entry-content">
     <p> 
@@ -36,14 +35,19 @@
 
   <footer class="entry-meta">
     <span class="cat-links">
-      <span class="entry-utility-prep entry-utility-prep-cat-links">Tag</span>
-      <a href="#" title="View all posts in Uncategorized" rel="category">      
- 	     <%= post.category %> 
-      </a>
+      <span class="entry-utility-prep entry-utility-prep-cat-links">Tag</span>      
+ 	     
+        <% post.tags.each do |tag| %>
+        <a href="#" title="View all posts in <%=tag.tag_name %>" rel="category">      
+          <%= tag.tag_name %>&nbsp; 
+        </a>  
+        <% end %>  
+            
+      
     </span>
-    <span class="sep"> | </span>
+    <span class="sep">|</span>
     <span class="comments-link">
-      <a href="#" title="Comment on Hello world!"><b>0</b> Comments</a>
+      <a href="#" title="Comment on <%=post.title %>"><b>0</b> Comments</a>
     </span>
   </footer><!-- #entry-meta -->
  
