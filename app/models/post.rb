@@ -10,6 +10,5 @@ class Post < ActiveRecord::Base
     validates_length_of(:abstract,:within=>1..200,:too_short=>"摘要长度为1~200！")
     
     
-   
 
 end

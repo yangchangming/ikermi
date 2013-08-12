@@ -20,16 +20,16 @@ class PostController < ApplicationController
 
 
     if @post.save && request.post?
-      @tags.is_valid = true
+      @tags.is_valid = true      
       
-      # tag不存在的情况下，保存新tag，这个部分逻辑应该放在tagmodel中
-      # TODO..
       if @tags.save
-        @post.tags << @tags  
-
-        flash[:notice] = "保存成功."
+        @post.tags << @tags          
+      else
+        @tags = Tag.find_by_tag_name(@tags.tag_name)
+        @post.tags << @tags 
       end
-      
+
+      flash[:notice] = "保存成功."      
     else
       # 将model错误信息提示转移到flash中
       flash[:notice] = []
