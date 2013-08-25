@@ -11,7 +11,7 @@ class Tag < ActiveRecord::Base
 
 	end
 
-	
+	# judge tag_name  if only unique
     def unique_tag_name?
     	if Tag.find_by_tag_name(tag_name)
     		errors.add(:tag_name,"is already being used")

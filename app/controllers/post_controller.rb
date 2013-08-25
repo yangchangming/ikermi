@@ -18,7 +18,7 @@ class PostController < ApplicationController
     @post = Post.new(params[:post])
     @tags = Tag.new(params[:tags])
 
-
+    # TODO transactioin....
     if @post.save && request.post?
       @tags.is_valid = true      
       
@@ -38,17 +38,46 @@ class PostController < ApplicationController
       end  
     end
    
-    redirect_to :controller=>'post',:action=>'index' 
-  
+    redirect_to :controller=>'post',:action=>'index'   
   end
 
-  def update
+  def update    
+    #@tags = Tag.update(params[:tags])
+    # TODO tag暂不支持更新
+
+    id = params[:post][:id]
+    post = Post.find(id)
+    if post.update_attributes(params[:post])
+      flash[:notice] = "更新成功." 
+      redirect_to :controller=>'post',:action=>'index'
+    else
+      #render :action=>edit
+    end  
+
   end
 
-  def edit
+  def edit    
+    ids = params[:ids]    
+    if ids==nil || ids.size <= 0 || ids.size>1
+      flash[:notice] = "请选择一篇文章!" 
+      redirect_to :controller=>'post',:action=>'index'    
+    else
+      @post = Post.find(ids[0]) 
+    end
   end
 
   def destory
+    ids = params[:ids]
+    if ids==nil || ids.size <= 0
+      flash[:notice] = "请选择文章!" 
+      redirect_to :controller=>'post',:action=>'index'    
+    else
+      if Post.destroy(params[:ids])
+        flash[:notice] = "删除成功."
+        redirect_to :controller=>'post',:action=>'index' 
+      end
+    end
+    
   end
 
   def enable

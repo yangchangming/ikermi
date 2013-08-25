@@ -21,7 +21,7 @@ ul,ol
 	#margin:2px 10px;
 }
 
-input,textarea{border:1px solid #999;border-bottom:1px solid #888;font-size:13px;width:250px;padding:3px}
+input,textarea{border:1px solid #999;border-bottom:1px solid #888;font-size:13px; /*width:250px;*/ padding:3px}
 input.long,textarea.long{width:500px}
 textarea.long{height:300px}
 
