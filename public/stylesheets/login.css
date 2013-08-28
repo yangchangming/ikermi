@@ -259,7 +259,20 @@ a.dropdown:active,a.dropdown.active{background:#999;border-color:#999;color:#FFF
 	.listing-title{font-size:14px;border-bottom:2px solid #ddd;padding-bottom:15px;margin-bottom:15px}
 	.full-body{display:none}
 	
-	#header .home{position:relative}.badge{background:none repeat scroll 0 0 #C3412F;color:white;display:block;font-size:11px;line-height:13px;padding:1px 5px;position:absolute;right:-8px;text-decoration:none;top:-7px;-webkit-border-radius:30px;-moz-border-radius:30px;-o-border-radius:30px;border-radius:30px}
+	#header .home{
+		position:relative}.badge{background:none repeat scroll 0 0 #C3412F;
+		color:white;
+		display:block;font-size:11px;line-height:13px;padding:1px 5px;
+		position:absolute;
+		right:-8px;
+		text-decoration:none;
+		top:-7px;
+		-webkit-border-radius:30px;
+		-moz-border-radius:30px;
+		-o-border-radius:30px;
+		border-radius:30px
+	}
+
 	#facebox{position:absolute;top:0;left:0;z-index:100;text-align:left}
 	#facebox .popup{position:relative;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;padding:10px;background:url(/images/shadow.png?1301366040)}
 	#facebox .content{display:table;width:300px;padding:7px 10px 10px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#D0D2D3}
@@ -286,11 +299,9 @@ a.dropdown:active,a.dropdown.active{background:#999;border-color:#999;color:#FFF
 	.jdialog_outterbox .dialog_buttons{display:none;margin-top:5px}
 	.jdialog_outterbox .dialog_buttons input{margin-right:10px;background:#666;padding:0;height:22px;border:1px solid #333;border-top:1px solid #CCC;border-left:1px solid #CCC;color:#FFF;line-height:20px}
 	.jdialog_outterbox .dialog_buttons_msg{float:right}.qeditor_border{background:#EAEAEA;padding:6px;margin-bottom:8px}.qeditor_toolbar{height:27px}
-	.qeditor_toolbar *{vertical-align:middle}
-	.qeditor_toolbar img{border:0}
-	.qeditor_toolbar a{border:1px solid #999;border-bottom:1px solid #666;border-right:0px;cursor:pointer;font-family:Georgia,default;font-size:11px;font-weight:bold;height:14px;line-height:11px;padding:4px 2px 3px;text-align:center;text-shadow:0 1px white;background:url(/images/qeditor/gray_bg.gif?1301366040) repeat-x top left;float:left;display:block;color:#000;font-weight:bold;width:18px}.qeditor_toolbar a:hover{text-decoration:none;border-color:#666}.qeditor_toolbar a:active{background:#DDD}.qeditor_toolbar a.qeditor_glast{border-right:1px solid #999;margin-right:5px}.qeditor_preview{padding:7px;border:1px solid #AAA;background:#FFF;min-height:50px;outline:none;-webkit-user-modify:read-write;word-wrap:break-word;-webkit-nbsp-mode:space;-webkit-line-break:after-white-space}.ac_results{padding:0px;border-color:#999999 #999999 #666666;border-style:solid;border-width:1px;background-color:white;overflow:hidden;z-index:99999;text-align:left}.ac_results ul{width:100%;list-style-position:outside;list-style:none;padding:0;margin:0}.ac_results li{margin:0px;padding:5px 7px;cursor:default;display:block;font:menu;font-size:12px;cursor:pointer;line-height:16px;overflow:hidden}.ac_loading{}.ac_odd{}.ac_results li.ac_over{color:#256098;background-color:#e1f0f7}.ac_results li.ac_no_result,.ac_results li.ac_default,.ac_results li.ac_no_result.ac_over,.ac_results li.ac_default.ac_over{background:#ddd;color:#333;cursor:auto}.tipsy{font-size:12px;position:absolute;padding:5px;z-index:100000}.tipsy-inner{background-color:#000;color:#FFF;max-width:200px;padding:5px 8px 4px 8px;text-align:center}.tipsy-inner{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}.tipsy-arrow{position:absolute;width:0;height:0;border:5px solid transparent}.tipsy-arrow-n{border-bottom-color:#000}.tipsy-arrow-s{border-top-color:#000}.tipsy-arrow-e{border-left-color:#000}.tipsy-arrow-w{border-right-color:#000}.tipsy-n .tipsy-arrow,.tipsy-nw .tipsy-arrow,.tipsy-ne .tipsy-arrow{top:0;border-top:none}.tipsy-s .tipsy-arrow,.tipsy-sw .tipsy-arrow,.tipsy-se .tipsy-arrow{bottom:0;border-bottom:none}.tipsy-n .tipsy-arrow,.tipsy-s .tipsy-arrow{left:50%;margin-left:-5px}.tipsy-nw .tipsy-arrow,.tipsy-sw .tipsy-arrow{left:10px}.tipsy-ne .tipsy-arrow,.tipsy-se .tipsy-arrow{right:10px}.tipsy-e .tipsy-arrow,.tipsy-w .tipsy-arrow{top:50%;margin-top:-5px}.tipsy-e .tipsy-arrow{right:0;border-right:none}.tipsy-w .tipsy-arrow{left:0;border-left:none}
 	
-	
+
+
 /*
  *	帖子编辑区样式	
 */
