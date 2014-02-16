@@ -3,7 +3,7 @@ Readme
 1.该工程是基于ruby1.8.6和rails2.0.2，所以启动工程前，请切换环境到以上版本，使用命令rvm use 1.8.6,rvm
   gemset use rails202 即可
 2.然后在ikermi主目录下，命令 ruby script/server mongrel 启动服务器mongrel即可
-3.本地后台登录： changming.yang.ah@gmail.com / 000000  
+3.使用自带的webrick启动服务，存在css不能加载的问题，所以需要安装mongrel 这个gem，来启动服务
 4.在后台tinymce中插入高亮代码时，选择syntaxhighlighter插件时，不能使用light和collapse功能，否则代码不显示
 5.editor and highlighter version: tinymce3.5.8  ,  syntaxhighlighter3.0.83
 6.skydriver img useage:   http://storage.live.com/items/864A899699572FE!1164

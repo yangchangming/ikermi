@@ -19,7 +19,7 @@ development:
   adapter: mysql
   database: ikermi
   username: root
-  password: mysql
+  password: 
   host: localhost
   encoding: utf8
 
@@ -31,7 +31,7 @@ test:
   encoding: utf8
   database: ikermi
   username: root
-  password: mysql
+  password: 
   host: localhost
 
 production:
@@ -39,5 +39,5 @@ production:
   encoding: utf8
   database: ikermi
   username: root
-  password: mysql
+  password: 
   host: localhost
