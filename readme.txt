@@ -4,9 +4,6 @@ Readme
   gemset use rails202 即可
 2.然后在ikermi主目录下，命令 ruby script/server mongrel 启动服务器mongrel即可
 3.使用自带的webrick启动服务，存在css不能加载的问题，所以需要安装mongrel 这个gem，来启动服务
-4.在后台tinymce中插入高亮代码时，选择syntaxhighlighter插件时，不能使用light和collapse功能，否则代码不显示
-
-
 
 
 
