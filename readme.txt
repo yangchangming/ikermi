@@ -5,21 +5,19 @@ Readme
 2.然后在ikermi主目录下，命令 ruby script/server mongrel 启动服务器mongrel即可
 3.使用自带的webrick启动服务，存在css不能加载的问题，所以需要安装mongrel 这个gem，来启动服务
 4.在后台tinymce中插入高亮代码时，选择syntaxhighlighter插件时，不能使用light和collapse功能，否则代码不显示
-5.editor and highlighter version: tinymce3.5.8  ,  syntaxhighlighter3.0.83
-6.skydriver img useage:   http://storage.live.com/items/864A899699572FE!1164
-  https://skydrive.live.com/redir?resid=864A899699572FE!1164             
+
 
 
 
 
 Feature
 ==============================================================================
-1.升级后台文章发布编辑器，支持代码高亮显示，支持图片发布  			
+1.升级后台文章发布编辑器，支持代码高亮显示,---- replace by jquery.qeditor 			
 2.表设计: tags,posts,posts_tags;tags <--> posts 多对多关系
 3.设计tag标记功能，新增文章时增加tag功能 ，目前只能增加一个tag       					
 4.修改文章详细页面的layout，完全占满页面，去掉导航				 	
-5.每次增加文章的tag时，如果tag已经存在就不在新增tag，而是取出原来的tagid，进行关联即可，如果不存在tag，就新建一
-  个tag，同时再和post进行关联
+5.每次增加文章的tag时，如果tag已经存在就不在新增tag，而是取出原来的tagid，进行关联即可，如果不存在tag，
+  就新建一个tag，同时再和post进行关联
 6.最近帖子只显示10个
 7.增加修改文章功能,tag暂不支持更新
 8.删除文章(posts)功能,只删除关联表(posts_tags)记录，不删除tags表记录
@@ -38,4 +36,4 @@ TODO
 4.增加评论文章功能，同时对评论进行计数
 5.按照tag标记搜索文章
 7.分页
-8.图片上传服务器端功能
+8.图片上传服务器端功能,with qeditor
