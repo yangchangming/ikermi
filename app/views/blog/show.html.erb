@@ -6,7 +6,7 @@
     <div class="entry-meta">
       <span class="sep">Posted on </span>      
         <%= @post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>     
-      <span class="sep"> | </span>
+     <!--  <span class="sep"> | </span>
       <span class="by-author">
         <span class="sep"> by </span>
         <span class="author vcard">
@@ -14,10 +14,11 @@
 				<%= @post.author  %>          
           </a>
         </span>
-      </span>
+      </span> -->
     </div>
-  
   </header>
+
+  <hr/>
 
   <div class="entry-content">
     <p>
@@ -29,17 +30,16 @@
     <span class="cat-links">
       <span class="entry-utility-prep entry-utility-prep-cat-links">Tag</span>
             
- 	     
         <% @post.tags.each do |tag| %>
-        <a href="#" title="View all posts in <%=tag.tag_name %>" rel="category">      
-          <%= tag.tag_name %>&nbsp; 
-        </a>  
+          <a href="#" title="View all posts in <%=tag.tag_name %>" rel="category">      
+            <%= tag.tag_name %>&nbsp; 
+          </a>  
         <% end %>     
 
-
-      </a>
     </span>
+    
     <span class="sep"> | </span>
+    
     <span class="comments-link">
       <a href="#" title="Comment on <%=@post.title %>"><b>0</b> Comments</a>
     </span>

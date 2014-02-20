@@ -1,18 +1,26 @@
- <% @posts.each do |post| %>
+
+<% @posts.each do |post| %>
 
 <!--  head beging -->
   <header class="entry-header">
-    <h1 class="entry-title">
-      <a href="blog/show/<%= post.id%>#more" title="<%= post.title %>" rel="bookmark">
+    <!-- <h1 class="entry-title"> -->
+    <li>
+      
+      <!-- <%= post.created_at.strftime("%Y-%m-%d")  %>&nbsp;&nbsp; -->
+      
+      <a href="blog/show/<%= post.id%>" title="<%= post.title %>" rel="bookmark" style="font-weight:500; color: #666;">
         <%= post.title %> 
       </a>
-    </h1>
+     
+     </li> 
+    <!-- </h1> -->
    
     <div class="entry-meta">
-      <span class="sep">Posted on </span>     
-        <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>      
-      <span class="sep"> | </span>
+
+      <!-- <span class="sep">Posted on </span>     
+      <%= post.created_at.strftime("%Y-%m-%d %H:%M:%S")  %>  -->    
       
+     <!--  <span class="sep"> | </span>
       <span class="by-author">
         <span class="sep"> by </span>
         <span class="author vcard">
@@ -20,20 +28,20 @@
 				<%= post.author  %>          
           </a>
         </span>
-      </span>
+      </span> -->
     </div>
    
   </header>
 <!--  head end -->
 
-  <div class="entry-content">
+ <!--  <div class="entry-content">
     <p> 
      <%= truncate_html(100,"....",post.content) %>
     </p>
-  </div>
+  </div> -->
 
 
-  <footer class="entry-meta">
+ <!--  <footer class="entry-meta">
     <span class="cat-links">
       <span class="entry-utility-prep entry-utility-prep-cat-links">Tag</span>      
  	     
@@ -43,14 +51,13 @@
         </a>  
         <% end %>  
             
-      
     </span>
     <span class="sep">|</span>
     <span class="comments-link">
       <a href="#" title="Comment on <%=post.title %>"><b>0</b> Comments</a>
     </span>
-  </footer><!-- #entry-meta -->
- <hr/>
+  </footer> --><!-- #entry-meta -->
+ <!-- <hr/> -->
  
 	<% end %>  
-  
+
