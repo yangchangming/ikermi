@@ -3,7 +3,7 @@ class BlogController < ApplicationController
   layout 'blog',:except=>'unknow_request'
 
   def index 
-    @posts = Post.find(:all,:order=>"created_at desc")  
+    @posts = Post.find(:all,:order=>"updated_at desc")  
     @recent_post = Post.find(:all,:order=>"created_at desc",:limit=>10) 
        
   end
