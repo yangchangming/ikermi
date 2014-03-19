@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '12a14a3265ee5930762d9f6a66893d69'
   
   #所有的controller都可以直接使用该model中的方法
-  include LoginSystem
+  include LoginSystem,FileProcess
   
 end

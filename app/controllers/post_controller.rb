@@ -76,10 +76,21 @@ class PostController < ApplicationController
         flash[:notice] = "删除成功."
         redirect_to :controller=>'post',:action=>'index' 
       end
-    end
-    
+    end 
   end
 
   def enable
   end
+
+  def upload
+    unless request.get?
+    if filename=file_upload(params[:post][:image])
+       #render :text=>filename
+
+       render :json=>filename.to_json
+    end
+    end
+  end
+
+
 end

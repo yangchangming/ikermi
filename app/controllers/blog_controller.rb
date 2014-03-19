@@ -18,6 +18,6 @@ class BlogController < ApplicationController
   def about
     @recent_post = Post.find(:all,:order=>"created_at desc")    
   end
-
+  
 
 end
