@@ -11,7 +11,7 @@ class BlogController < ApplicationController
   def show 
     @recent_post = Post.find(:all,:order=>"created_at desc")    
     @post = Post.find(params[:id])
-    render :layout => 'post_detail'
+    render :layout => 'post'
   end
 
   def about

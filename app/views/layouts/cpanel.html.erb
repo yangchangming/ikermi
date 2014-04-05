@@ -26,7 +26,8 @@
         </td>
         <td id="user_bar">
           <% if session[:user] %>
-              你好 <strong><%= session[:user].username %></strong> <a href="/logout">登出</a>
+              你好 <strong><%= session[:user].username %></strong>
+              <a href="/logout">登出</a>
           <% end %>
         </td>
       </tr>
