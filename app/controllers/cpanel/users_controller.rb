@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Cpanel::UsersController < CpanelController
 
   def index
     @users = User.find(:all)
@@ -23,14 +23,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save && request.post?
-      #self.logged_in_user = @user
+      self.logged_in_user = @user
       flash[:notice] = @user.username + ".注册成功!"
-      redirect_to cpanel_posts_path
+      redirect_to :controller=>'admin',:action=>'panel'
     else 
       #将model错误信息提示转移到flash中
       flash[:notice] = []
       @user.errors.each { |property, error| flash[:notice] << error }   
-      redirect_to :controller=>'register',:action=>'index'
+      redirect_to :controller=>'admin',:action=>'register'
     end
   end
   

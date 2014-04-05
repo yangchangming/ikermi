@@ -74,7 +74,7 @@ class PostController < ApplicationController
     else
       if Post.destroy(params[:ids])
         flash[:notice] = "删除成功."
-        redirect_to :controller=>'post',:action=>'index' 
+        redirect_to :controller=>'post',:action=>'index'
       end
     end 
   end
@@ -85,8 +85,6 @@ class PostController < ApplicationController
   def upload
     unless request.get?
     if filename=file_upload(params[:post][:image])
-       #render :text=>filename
-
        render :json=>filename.to_json
     end
     end

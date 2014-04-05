@@ -1,0 +1,13 @@
+<% content_for :base_sitemap do %>
+    <a href="<%= cpanel_posts_path %>">cpanel_asks</a> »
+<% end %>
+<% content_for :styles do %>
+<% end %>
+
+<div class="tools">
+  <a href="<%= cpanel_posts_path %>" class="button small left<%= ' checked' if params[:action] == "index" %>">查看所有</a>
+  <% if ["edit","update"].index(params[:action]) %>
+    <a href="#" class="button small checked">编辑</a>
+  <% end %>
+  <a href="<%= new_cpanel_post_url %>" class="button small right<%= ' checked' if ["new","create"].index(params[:action]) %>">新建</a>
+</div>

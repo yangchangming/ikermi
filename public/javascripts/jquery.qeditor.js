@@ -42,12 +42,13 @@ window.QEditor = {
       p = false;
     }
     if (a === "createLink") {
-      p = prompt("Type URL:");
+      p = QEditor.prompt("链接地址:");
       if (p.trim().length === 0) {
         return false;
       }
     } else if (a === "insertimage") {
-      p = prompt("Image URL:");
+        p = QEditor.prompt("图片地址:");
+
       if (p.trim().length === 0) {
         return false;
       }
@@ -56,15 +57,17 @@ window.QEditor = {
     editor.change();
     return false;
   },
+
   prompt: function(title) {
     var val;
-    val = prompt(title);
+    val = prompt(title,"http://yangchangming.com/upload/images/");
     if (val) {
       return val;
     } else {
       return false;
     }
   },
+
   toggleFullScreen: function(el) {
     var border;
     border = $(el).parent().parent();
@@ -75,14 +78,17 @@ window.QEditor = {
     }
     return false;
   },
+
   enterFullScreen: function(border) {
     border.data("qe-fullscreen", "1").addClass("qeditor_fullscreen");
     border.find(".qeditor_preview").focus();
     return border.find(".qe-fullscreen span").attr("class", "icon-resize-small");
   },
+
   exitFullScreen: function() {
     return $(".qeditor_border").removeClass("qeditor_fullscreen").data("qe-fullscreen", "0").find(".qe-fullscreen span").attr("class", "icon-fullscreen");
   },
+
   getCurrentContainerNode: function() {
     var containerNode, node;
     if (window.getSelection) {
@@ -91,11 +97,15 @@ window.QEditor = {
     }
     return containerNode;
   },
+
   version: function() {
     return "0.1.1";
   }
 };
 
+/**
+ * 初始化编辑器
+ */
 (function($) {
   return $.fn.qeditor = function(options) {
     return this.each(function() {

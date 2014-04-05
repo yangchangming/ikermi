@@ -57,9 +57,12 @@
     <div class="container"> 
 	
       <div class="left_wrapper"> 
-       <!--  <div id="site_name"> 
-         <a href="/" class="logo">颗米</a>  
-        </div> -->
+         <div id="site_name">
+         <a href="/" class="logo">Blog</a>
+        </div>
+        <!--<div id="add_ask">-->
+          <!--<input type="text" placeholder="搜索问题，话题，会员" />-->
+        <!--</div>-->
       </div> 
 	  
       <div class="sidebar"> 
@@ -67,7 +70,7 @@
 			<% if !session[:user] %>
 				<a href="/byself">随便看看</a> 
 				<a href="/admin">登陆</a>
-	        <!--    <a href="/admin/register">注册</a>  -->
+	            <a href="/admin/register">注册</a>
 			<% end %>
 			<% if session[:user] %>
 	            <a href="/">首页</a> 

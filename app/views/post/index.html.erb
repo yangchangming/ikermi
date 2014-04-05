@@ -12,7 +12,6 @@
 -->
 
 <script type="text/javascript">
-
 	function doDestroy(){
 		if(window.confirm('Are you sure?')){
 			document.form1.action = "/post/destory";
@@ -24,17 +23,16 @@
 		document.form1.action = "/post/edit";
 		document.form1.submit();
 	}
-
-
 </script>
 
+<div class="leftbox">
 
-<div class="leftbox"> 
 <div class="left_wrapper"> 
 	<div class="box" > 
-    <h1>文章</h1> 
+        <h1>文章</h1>
+    </div>
 </div>
- 
+
 <% form_for :post,:html=>{:name=>"form1"} do |f| %>
 
 <div class="contentArea">
@@ -72,7 +70,7 @@
 </div>
 
 
-</div> 
+
  
 
 	 
@@ -92,3 +90,5 @@
 <!-- 侧边栏结束 -->
 
 <% end %>
+
+</div>

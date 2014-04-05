@@ -1,0 +1,40 @@
+<% content_for :sitemap do %>
+    <span class="current">列表</span>
+<% end %>
+<%= render 'cpanel/posts/_base' %>
+
+<div id="cpanel_asks">
+
+  <table class="wice_grid">
+    <thead>
+    <tr class="wice_grid_title_row">
+      <th>标题</th>
+      <th>作者</th>
+      <th>Tag</th>
+      <th>时间</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <% @posts.each_with_index do |item,i| %>
+        <tr class="<%= i.odd? ? "odd" : "even" %>">
+          <td><%= item.title %></td>
+          <td style="width:50px;"><%= item.author %>
+          <td style="width:100px;">
+            <% item.tags.each do |tag| %>
+                <%= tag.tag_name %>
+            <% end %>
+          </td>
+          <td style="width:200px;"><%= item.created_at.strftime('%Y-%m-%d %H:%M:%S')  %></td>
+          <td style="width:50px;">
+            <%= link_to '修改', {:controller => "cpanel/posts",:action => "edit",:id=>item.id}  %>
+            <%= link_to image_tag("wice_grid/delete.png", :style => "margin-bottom:-4px"),{:controller => "cpanel/posts",:action => "destory",:id=>item.id}, :method => :delete, :confirm => "确定删除?" %>
+          </td>
+        </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
+</div>

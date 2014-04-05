@@ -4,6 +4,7 @@ Readme
   gemset use rails202 即可
 2.然后在ikermi主目录下，命令 ruby script/server mongrel 启动服务器mongrel即可
 3.使用自带的webrick启动服务，存在css不能加载的问题，所以需要安装mongrel 这个gem，来启动服务
+4.本地使用的application.rb,而服务端使用的是application_controller.rb，这个和rails版本的问题
 
 
 
@@ -20,6 +21,7 @@ Feature
 8.删除文章(posts)功能,只删除关联表(posts_tags)记录，不删除tags表记录
 9.修改首页文章索引顺序，按照更新时间逆序排序
 10.修改文章展现页面，去掉导航和图片，首页去掉展现文章大纲内容，改为只显示标题，同时只留下最新评论和类别模块
+11.图片上传服务器端功能,通过jquery.qeditor.js，通过内嵌iframe实现无刷新上传，所有的图片上传至/public/upload/images/下
 
 
 
@@ -30,5 +32,6 @@ TODO
 2.增加评论文章功能，同时对评论进行计数
 3.按照tag标记搜索文章
 4.分页
-5.图片上传服务器端功能,with qeditor
+5.对主要的controller代码进行重构，如posts_controller
 6.数据库的备份脚本
+7.重构登陆验证功能

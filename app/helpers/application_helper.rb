@@ -3,8 +3,16 @@ require 'rexml/parsers/pullparser'
 
 module ApplicationHelper
 
-#截取含有html标签的字符串，不会破坏html的完整性
-def truncate_html(len, ellipsis,article)
+  # 去除区域里面的内容的换行标记-with_output_buffer方法该版本不支持
+  def spaceless(&block)
+    data = with_output_buffer(&block)
+    data = data.gsub(/\n\s+/," ")
+    data = data.gsub(/>\s+</,"> <")
+    raw data
+  end
+
+  #截取含有html标签的字符串，不会破坏html的完整性
+  def truncate_html(len, ellipsis,article)
     p = REXML::Parsers::PullParser.new(article)
     tags = []
     new_len = len

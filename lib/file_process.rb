@@ -1,6 +1,5 @@
 module FileProcess
 
-  protected
   def file_upload(file)
     if !file.original_filename.empty?
       @filename=getFileName(file.original_filename)
