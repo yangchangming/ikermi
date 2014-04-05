@@ -5,7 +5,6 @@ class BlogController < ApplicationController
   def index 
     @posts = Post.find(:all,:order=>"updated_at desc")  
     @recent_post = Post.find(:all,:order=>"created_at desc",:limit=>10) 
-       
   end
 
 

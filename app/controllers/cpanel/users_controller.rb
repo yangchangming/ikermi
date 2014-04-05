@@ -25,12 +25,12 @@ class Cpanel::UsersController < CpanelController
     if @user.save && request.post?
       self.logged_in_user = @user
       flash[:notice] = @user.username + ".注册成功!"
-      redirect_to :controller=>'admin',:action=>'panel'
+      redirect_to cpanel_posts_path
     else 
       #将model错误信息提示转移到flash中
       flash[:notice] = []
       @user.errors.each { |property, error| flash[:notice] << error }   
-      redirect_to :controller=>'admin',:action=>'register'
+      redirect_to :controller=>'register',:action=>'index'
     end
   end
   
