@@ -4,13 +4,12 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'blog', :action => 'index'
 
   #创建restful路由
-  map.resources :users, :member => {:enable => :put}
-
-  map.show_user '/user/:username', :controller => 'users', :action => 'show_by_username'
+  #map.resources :users, :member => {:enable => :put}
+  #map.show_user '/user/:username', :controller => 'users', :action => 'show_by_username'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.connect '*anything', :controller => 'index', :action => 'unknow_request'
+  map.connect '*anything', :controller => "blog",:action => "error"
 
   # 设定命名空间 cpanel
   map.namespace (:cpanel) do |cpanel|
