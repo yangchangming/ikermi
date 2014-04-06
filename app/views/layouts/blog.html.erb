@@ -7,9 +7,13 @@
   <meta name="viewport" content="width=device-width" />
   <title>Blog | 杨昌明的美好生活</title>
  
-<link href="http://cdn.staticfile.org/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <% if use_yahei_font?(request.env["HTTP_USER_AGENT"]) %>
+      <%= stylesheet_link_tag "font","application","front","blog" %>
+  <% else %>
+      <%= stylesheet_link_tag "font_no_cleartype","application","front","blog" %>
+  <% end %>
 
-  <%= stylesheet_link_tag "blog" %>
+
 
   <style type="text/css">
     .recentcomments a{
@@ -17,7 +21,7 @@
     }
   </style>
 
-	<script type="text/javascript">
+  <script type="text/javascript">
   	var _gaq = _gaq || [];
   	_gaq.push(['_setAccount', 'UA-36330309-1']);
   	_gaq.push(['_trackPageview']);
@@ -26,7 +30,7 @@
     	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
  	 })();
-	</script>
+  </script>
 
 </head>
 
@@ -34,12 +38,12 @@
   <div id="page" class="hfeed">
     <header id="branding" role="banner">
       <hgroup>
-        <h1 id="site-title">
+        <div id="site-title">
           <span>          
          	 ChangMing.Y
           </span>
-        </h1>
-        <h2 id="site-description">{&nbsp;Just personal site&nbsp;}</h2>
+        </div>
+        <div id="site-description">{&nbsp;Just personal site&nbsp;}</div>
       </hgroup>
 
      <img src="/images/banner.jpg" width="1000" height="288" ></img>
@@ -62,10 +66,6 @@
             <li class="page_item page-item-2">
               <%= link_to 'About', {:controller=>'blog',:action=>'about'} %>
             </li>
-    <!--        <li class="page_item page-item-2">
-              <%= link_to 'ScreenCast', {:controller=>'blog',:action=>'screencast'} %>
-            </li>
-    -->
           </ul>
         </div>
       </nav><!-- #access -->
@@ -80,16 +80,6 @@
 
       <div id="secondary" class="widget-area" role="complementary">
 	
-			<!--	 
-        <aside id="search-2" class="widget widget_search">
-          <form method="get" id="searchform" action="#">
-            <label for="s" class="assistive-text">Search</label>
-            <input type="text" class="field" name="s" id="s" placeholder="Search" />
-            <input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
-          </form>
-        </aside>
-        -->
-        
        <!--  <aside id="recent-posts-2" class="widget widget_recent_entries">
           <h3 class="widget-title">Recent Posts</h3>
           <ul>
@@ -140,9 +130,6 @@
         <!-- <aside id="meta-2" class="widget widget_meta">
           <h3 class="widget-title">Meta</h3>
           <ul>
-            <li>   
-            	<%= link_to 'Log in',{:controller=>'admin',:action=>'index'} %>
-            </li> 
             <li>
               <a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
             <li>

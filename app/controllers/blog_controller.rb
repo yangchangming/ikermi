@@ -1,6 +1,6 @@
 class BlogController < ApplicationController
 
-  layout 'blog',:except=>'unknow_request'
+  layout 'blog',:except=>'about'
 
   def index 
     @posts = Post.find(:all,:order=>"updated_at desc")  

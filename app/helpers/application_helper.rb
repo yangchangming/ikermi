@@ -3,6 +3,18 @@ require 'rexml/parsers/pullparser'
 
 module ApplicationHelper
 
+  #是否使用微软雅黑字体
+  def use_yahei_font?(ua)
+    use = true
+    ["Windows NT 5.2", "Windows NT 5.1"].each do |w|
+      if ua.include?(w)
+        use = false
+        break
+      end
+    end
+    return use
+  end
+
   # 去除区域里面的内容的换行标记-with_output_buffer方法该版本不支持
   def spaceless(&block)
     data = with_output_buffer(&block)
