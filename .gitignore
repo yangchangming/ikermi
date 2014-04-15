@@ -1,4 +1,5 @@
 assc
+.DS_Store
 .sass-cache
 capybara-*.html
 .rspec
@@ -13,7 +14,7 @@ capybara-*.html
 /db/*.sqlite3
 /public/system/*
 /public/upload/images/*
-/public/.*
+/public/.DS_Store
 /coverage/
 /spec/tmp/*
 **.orig
