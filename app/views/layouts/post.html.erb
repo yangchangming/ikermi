@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width" />
   <title>Blog | 杨昌明的美好生活</title>
 
-<link href="http://cdn.staticfile.org/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/bootstrap_min.css" type="text/css" rel="stylesheet" />
 
   <% if use_yahei_font?(request.env["HTTP_USER_AGENT"]) %>
       <%= stylesheet_link_tag "font","application","front","blog" %>
@@ -85,7 +85,7 @@
     <footer id="colophon" role="contentinfo">
       <div id="site-generator">
         Proudly Powered By&nbsp;<a target="_blank" href="http://weibo.com/changmingy">@昌明点杨</a> <br/>
-        &nbsp;&nbsp;黔ICP备12004119号-1 &nbsp;&nbsp;Base on Rails
+        &copy;2015&nbsp;&nbsp;Base on Rails
       </div>
     </footer>
 
