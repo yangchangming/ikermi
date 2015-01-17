@@ -17,7 +17,7 @@
 
 development:
   adapter: mysql
-  database: ikermi
+  database: blog
   username: root
   password: 
   host: localhost
@@ -29,7 +29,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: ikermi
+  database: blog
   username: root
   password: 
   host: localhost
@@ -37,7 +37,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: ikermi
+  database: blog
   username: root
   password: 
   host: localhost
