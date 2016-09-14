@@ -1,7 +1,6 @@
 assc
 .DS_Store
 .loadpath
-readme.txt
 .sass-cache
 capybara-*.html
 .rspec
